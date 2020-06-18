@@ -1,0 +1,15 @@
+.my-container {
+  height: 450px;
+  overflow: auto;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+  text-align: left;
+}
+
+.text {
+  padding-left: 1rem;
+}
+

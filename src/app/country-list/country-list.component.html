@@ -1,0 +1,46 @@
+<div class="my-container mat-elevation-z8">
+  <mat-form-field>
+    <mat-label class="text">Search...</mat-label>
+    <input class="text" matInput (keyup)="applyFilter($event)" placeholder="Ex. Romania">
+  </mat-form-field>
+  <table mat-table [dataSource]="countries" id="content-table">
+
+    <ng-container matColumnDef="Country" >
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let country"><span class="flag-icon flag-icon-{{country.CountryCode | lowercase}} flag-icon-squared" style="margin-right: 3px"></span>{{country.Country}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="NewConfirmed" >
+      <th mat-header-cell *matHeaderCellDef> New Confirmed </th>
+      <td mat-cell *matCellDef="let country"> {{country.NewConfirmed}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="TotalConfirmed" >
+      <th mat-header-cell *matHeaderCellDef> Total Confirmed </th>
+      <td mat-cell *matCellDef="let country"> {{country.TotalConfirmed}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="NewDeaths" >
+      <th mat-header-cell *matHeaderCellDef> New Deaths </th>
+      <td mat-cell *matCellDef="let country"style="color: red"> {{country.NewDeaths}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="TotalDeaths" >
+      <th mat-header-cell *matHeaderCellDef> Total Deaths </th>
+      <td mat-cell *matCellDef="let country" style="color: darkred"> {{country.TotalDeaths}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="NewRecovered" >
+      <th mat-header-cell *matHeaderCellDef> New Recovered </th>
+      <td mat-cell *matCellDef="let country"> {{country.NewRecovered}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="TotalRecovered" >
+      <th mat-header-cell *matHeaderCellDef> Total Recovered </th>
+      <td mat-cell *matCellDef="let country" style="color: green"> {{country.TotalRecovered}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

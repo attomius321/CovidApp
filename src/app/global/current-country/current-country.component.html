@@ -1,0 +1,31 @@
+<div id="country mat-elevation-z8" *ngIf="currentCountry">
+  <div class="card horizontal">
+    <div class="card-stacked">
+      <div class="card-content">
+        <p class="card-title" style="text-align: center">
+          Your current location: <br><br>
+          <span class="flag-icon flag-icon-{{currentCountry.CountryCode | lowercase}} flag-icon-squared" style="margin-right: 3px"></span>
+          {{currentCountry.Country}}
+        </p>
+        <table class="centered">
+          <thead>
+          <tr>
+            <th>Confirmed</th>
+            <th>Active</th>
+            <th>Deaths</th>
+            <th>Recovered</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{currentCountry.Confirmed}}</td>
+            <td style="color: blue">{{currentCountry.Active}}</td>
+            <td style="color: red">{{currentCountry.Deaths}}</td>
+            <td style="color: green">{{currentCountry.Recovered}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

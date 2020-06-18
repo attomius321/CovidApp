@@ -1,0 +1,33 @@
+<div id="global mat-elevation-z8" *ngIf="global">
+  <div class="card horizontal">
+    <div class="card-stacked">
+      <div class="card-content">
+        <p class="card-title" style="text-align: center">
+          Global
+        </p>
+        <table class="centered">
+          <thead>
+          <tr>
+            <th>New confirmed</th>
+            <th>Total confirmed</th>
+            <th>New deaths</th>
+            <th>Total deaths</th>
+            <th>New recovered</th>
+            <th>Total recovered</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td style="color: blue">{{global.NewConfirmed}}</td>
+            <td style="color: darkblue">{{global.TotalConfirmed}}</td>
+            <td style="color: red">{{global.NewDeaths}}</td>
+            <td style="color: darkred">{{global.TotalDeaths}}</td>
+            <td style="color: green">{{global.NewRecovered}}</td>
+            <td style="color: darkgreen">{{global.TotalRecovered}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
